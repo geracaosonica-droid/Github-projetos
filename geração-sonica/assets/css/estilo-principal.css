@@ -216,4 +216,14 @@ body {
     font-size: 16px;
 }
 
-.area
+.area-upload {
+    border: 2px dashed var(--azul-neon);
+    border-radius: 15px;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 20px 0;
+    color: #cccccc;
+}
+
+.chat-live {
+    margin-top: 
