@@ -9,6 +9,7 @@
 </head>
 <body>
 
+    <!-- Cabeçalho -->
     <header class="cabecalho">
         <div class="logo">GERAÇÃO SÔNICA</div>
         <div class="subtitulo">A nova era da música brasileira</div>
@@ -17,6 +18,8 @@
     </header>
 
     <main class="container">
+
+        <!-- 📻 Tela Rádio -->
         <section id="tela-radio" class="tela ativa">
             <div class="card">
                 <h2 class="titulo-secao">📻 RÁDIO AO VIVO</h2>
@@ -30,25 +33,39 @@
             </div>
         </section>
 
+        <!-- 🎵 Tela Playlist -->
         <section id="tela-playlist" class="tela">
             <div class="card">
                 <h2 class="titulo-secao">🎵 PLAYLIST</h2>
                 <p class="texto-info">As melhores da nova era da música brasileira</p>
+
                 <div class="lista-item">
-                    <div><strong>Luzes de Neon</strong><br><small>LUAH • 3:28 • MP3</small></div>
+                    <div>
+                        <strong>Luzes de Neon</strong><br>
+                        <small>LUAH • 3:28 • MP3</small>
+                    </div>
                     <button class="btn-tocar" onclick="tocarMusica('luzes-neon.mp3', 'Luzes de Neon', 'LUAH')">▶️</button>
                 </div>
+
                 <div class="lista-item">
-                    <div><strong>Frequência Alta</strong><br><small>R$ANTOS • 3:45 • WAV</small></div>
+                    <div>
+                        <strong>Frequência Alta</strong><br>
+                        <small>R$ANTOS • 3:45 • WAV</small>
+                    </div>
                     <button class="btn-tocar" onclick="tocarMusica('frequencia-alta.mp3', 'Frequência Alta', 'R$ANTOS')">▶️</button>
                 </div>
+
                 <div class="lista-item">
-                    <div><strong>Vem Comigo</strong><br><small>Malu Azevedo • 2:56 • MP3</small></div>
+                    <div>
+                        <strong>Vem Comigo</strong><br>
+                        <small>Malu Azevedo • 2:56 • MP3</small>
+                    </div>
                     <button class="btn-tocar" onclick="tocarMusica('vem-comigo.mp3', 'Vem Comigo', 'Malu Azevedo')">▶️</button>
                 </div>
             </div>
         </section>
 
+        <!-- 🎙️ Tela Podcast -->
         <section id="tela-podcast" class="tela">
             <div class="card">
                 <h2 class="titulo-secao">🎙️ PODCASTS AO VIVO</h2>
@@ -64,6 +81,7 @@
             </div>
         </section>
 
+        <!-- 🎟️ Tela Agenda de Shows -->
         <section id="tela-agenda" class="tela">
             <div class="card">
                 <h2 class="titulo-secao">🎟️ AGENDA & SHOWS</h2>
@@ -72,22 +90,28 @@
             </div>
         </section>
 
+        <!-- 📤 Tela Envie Sua Música -->
         <section id="tela-envio" class="tela">
             <div class="card">
                 <h2 class="titulo-secao">📤 ENVIE SUA MÚSICA</h2>
                 <p class="texto-info">Mostre seu talento para todo o Brasil!</p>
+
                 <input type="text" placeholder="Nome da Música" class="formulario-campo">
                 <input type="text" placeholder="Seu nome ou nome artístico" class="formulario-campo">
+
                 <div class="area-upload">
                     <h3>📂 ARRASTE SEU ARQUIVO AQUI</h3>
                     <p>Formatos aceitos: MP3, WAV • Tamanho máximo: 20MB</p>
                 </div>
+
                 <button class="btn-principal" onclick="enviarMusica()">⬆️ ENVIAR MÚSICA</button>
                 <p class="texto-vinculo">🔒 Seus dados estão seguros conosco</p>
             </div>
         </section>
+
     </main>
 
+    <!-- Navegação Inferior -->
     <nav class="navegacao">
         <div class="nav-item ativo" data-tela="radio">📻<br>Rádio</div>
         <div class="nav-item" data-tela="playlist">🎵<br>Playlist</div>
@@ -96,8 +120,10 @@
         <div class="nav-item" data-tela="envio">📤<br>Enviar</div>
     </nav>
 
+    <!-- Scripts -->
     <script src="navegacao.js"></script>
     <script src="vinculo-lark.js"></script>
     <script src="funcoes.js"></script>
+
 </body>
 </html>
