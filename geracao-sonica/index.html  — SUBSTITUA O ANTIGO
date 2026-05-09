@@ -81,7 +81,7 @@
             </div>
         </section>
 
-        <!-- 🎟️ Agenda de Shows -->
+        <!-- 🎟️ Tela Agenda de Shows -->
         <section id="tela-agenda" class="tela">
             <div class="card">
                 <h2 class="titulo-secao">🎟️ AGENDA & SHOWS</h2>
@@ -90,7 +90,7 @@
             </div>
         </section>
 
-        <!-- 📤 Envie Sua Música -->
+        <!-- 📤 Tela Envie Sua Música -->
         <section id="tela-envio" class="tela">
             <div class="card">
                 <h2 class="titulo-secao">📤 ENVIE SUA MÚSICA</h2>
@@ -127,4 +127,3 @@
 
 </body>
 </html>
- 
