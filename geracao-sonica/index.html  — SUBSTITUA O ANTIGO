@@ -17,7 +17,7 @@
         <p style="font-size:12px; color:#888;">Reproduzido via Lark Player 🎵</p>
     </header>
 
-    <main class="container"> 
+    <main class="container">
 
         <!-- 📻 Tela Rádio -->
         <section id="tela-radio" class="tela ativa">
