@@ -18,7 +18,7 @@ body {
     background: radial-gradient(circle at top, #1a0b42 0%, var(--preto-fundo) 70%);
     color: var(--branco);
     min-height: 100vh;
-    background-image: url('../imagens/fundo-neon.png');
+    background-image: url('fundo-neon.png');
     background-size: cover;
     background-attachment: fixed;
 }
@@ -111,6 +111,15 @@ body {
     box-shadow: 0 0 40px var(--roxo-neon);
     display: block;
     margin: 0 auto 30px;
+}
+
+.imagem-podcast {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    margin: 15px auto;
+    display: block;
+    box-shadow: 0 0 25px rgba(0,180,216,0.5);
 }
 
 .btn-principal {
@@ -230,4 +239,3 @@ body {
     padding: 20px;
     background: rgba(255,255,255,0.05);
     border-radius: 15px;
-    border: 1px solid rgba
