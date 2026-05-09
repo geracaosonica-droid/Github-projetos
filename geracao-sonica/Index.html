@@ -1,242 +1,129 @@
-:root {
-    --roxo-neon: #9d4edd;
-    --azul-neon: #00b4d8;
-    --preto-fundo: #050218;
-    --cinza-escuro: #120b35;
-    --branco: #ffffff;
-    --sombra-neon: 0 0 20px rgba(157, 78, 221, 0.6);
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geração Sônica — Rádio 24h</title>
+    <link rel="stylesheet" href="assets/css/estilo-principal.css">
+    <link rel="icon" href="assets/imagens/icone-app.png">
+</head>
+<body>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, sans-serif;
-}
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+        <div class="logo">GERAÇÃO SÔNICA</div>
+        <div class="subtitulo">A nova era da música brasileira</div>
+        <div class="indicador-ao-vivo">🔴 RÁDIO AO VIVO 24H</div>
+        <p style="font-size:12px; color:#888;">Reproduzido via Lark Player 🎵</p>
+    </header>
 
-body {
-    background: radial-gradient(circle at top, #1a0b42 0%, var(--preto-fundo) 70%);
-    color: var(--branco);
-    min-height: 100vh;
-    background-image: url('../imagens/fundo-neon.png');
-    background-size: cover;
-    background-attachment: fixed;
-}
+    <main class="container">
 
-.cabecalho {
-    background: rgba(18, 11, 53, 0.85);
-    padding: 20px;
-    text-align: center;
-    border-bottom: 2px solid var(--roxo-neon);
-    box-shadow: var(--sombra-neon);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
+        <!-- 📻 Tela Rádio -->
+        <section id="tela-radio" class="tela ativa">
+            <div class="card">
+                <h2 class="titulo-secao">📻 RÁDIO AO VIVO</h2>
+                <div class="imagem-central">
+                    <img src="assets/imagens/tela-inicial.png" alt="Rádio Geração Sônica">
+                </div>
+                <button class="btn-principal" onclick="tocarRadioAoVivo()">▶️ LIGAR RÁDIO AGORA</button>
+                <p class="texto-info">Tocando agora: As Mais Tocadas • Geração Sônica</p>
+                <p class="texto-vinculo">✅ Vinculado ao Lark Player Oficial</p>
+                <a href="https://larkplayer.link/Ahg1u1hYBZ" target="_blank" style="color:#00b4d8; text-decoration:none; font-size:14px;">📥 Instalar/Atualizar Lark Player</a>
+            </div>
+        </section>
 
-.logo {
-    font-size: 36px;
-    font-weight: 900;
-    background: linear-gradient(90deg, var(--roxo-neon), var(--azul-neon));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 15px rgba(157,78,221,0.4);
-}
+        <!-- 🎵 Tela Playlist -->
+        <section id="tela-playlist" class="tela">
+            <div class="card">
+                <h2 class="titulo-secao">🎵 PLAYLIST</h2>
+                <p class="texto-info">As melhores da nova era da música brasileira</p>
 
-.subtitulo {
-    font-size: 14px;
-    color: #cccccc;
-    margin-top: 5px;
-    letter-spacing: 1px;
-}
+                <div class="lista-item">
+                    <div>
+                        <strong>Luzes de Neon</strong><br>
+                        <small>LUAH • 3:28 • MP3</small>
+                    </div>
+                    <button class="btn-tocar" onclick="tocarMusica('luzes-neon.mp3', 'Luzes de Neon', 'LUAH')">▶️</button>
+                </div>
 
-.indicador-ao-vivo {
-    display: inline-block;
-    background: #ff3333;
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-    margin-top: 8px;
-    animation: piscar 1.5s infinite;
-}
+                <div class="lista-item">
+                    <div>
+                        <strong>Frequência Alta</strong><br>
+                        <small>R$ANTOS • 3:45 • WAV</small>
+                    </div>
+                    <button class="btn-tocar" onclick="tocarMusica('frequencia-alta.mp3', 'Frequência Alta', 'R$ANTOS')">▶️</button>
+                </div>
 
-@keyframes piscar {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
-}
+                <div class="lista-item">
+                    <div>
+                        <strong>Vem Comigo</strong><br>
+                        <small>Malu Azevedo • 2:56 • MP3</small>
+                    </div>
+                    <button class="btn-tocar" onclick="tocarMusica('vem-comigo.mp3', 'Vem Comigo', 'Malu Azevedo')">▶️</button>
+                </div>
+            </div>
+        </section>
 
-.container {
-    padding: 30px 20px;
-    max-width: 450px;
-    margin: 0 auto;
-    padding-bottom: 100px;
-}
+        <!-- 🎙️ Tela Podcast -->
+        <section id="tela-podcast" class="tela">
+            <div class="card">
+                <h2 class="titulo-secao">🎙️ PODCASTS AO VIVO</h2>
+                <img src="assets/imagens/tela-podcast.png" alt="Podcast Geração Sônica" class="imagem-podcast">
+                <button class="btn-principal" onclick="tocarPodcast('podcast-ao-vivo.mp3', 'Podcast Geração Sônica')">🎧 OUVIR AGORA</button>
+                <div class="chat-live">
+                    <h3>💬 Bate-papo ao vivo</h3>
+                    <div class="mensagem">Lívia Martins: Salve, galera! Podcast demais hoje! 🔥</div>
+                    <div class="mensagem">DJ Rafael: Esse episódio tá sensacional! 🚀</div>
+                    <input type="text" placeholder="Digite sua mensagem..." class="campo-chat">
+                    <button class="btn-principal" onclick="enviarMensagem()">ENVIAR</button>
+                </div>
+            </div>
+        </section>
 
-.tela {
-    display: none;
-}
+        <!-- 🎟️ Tela Agenda de Shows -->
+        <section id="tela-agenda" class="tela">
+            <div class="card">
+                <h2 class="titulo-secao">🎟️ AGENDA & SHOWS</h2>
+                <p class="texto-info">Confira todas as datas, locais e ingressos!</p>
+                <a href="https://instagram.com/geracaosonica" target="_blank" class="btn-principal">📱 ABRIR NO INSTAGRAM</a>
+            </div>
+        </section>
 
-.tela.ativa {
-    display: block;
-    animation: aparecer 0.4s ease;
-}
+        <!-- 📤 Tela Envie Sua Música -->
+        <section id="tela-envio" class="tela">
+            <div class="card">
+                <h2 class="titulo-secao">📤 ENVIE SUA MÚSICA</h2>
+                <p class="texto-info">Mostre seu talento para todo o Brasil!</p>
 
-@keyframes aparecer {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+                <input type="text" placeholder="Nome da Música" class="formulario-campo">
+                <input type="text" placeholder="Seu nome ou nome artístico" class="formulario-campo">
 
-.card {
-    background: rgba(255,255,255,0.06);
-    border-radius: 20px;
-    padding: 25px;
-    margin-bottom: 25px;
-    border: 1px solid rgba(157,78,221,0.3);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-}
+                <div class="area-upload">
+                    <h3>📂 ARRASTE SEU ARQUIVO AQUI</h3>
+                    <p>Formatos aceitos: MP3, WAV • Tamanho máximo: 20MB</p>
+                </div>
 
-.titulo-secao {
-    font-size: 26px;
-    margin-bottom: 20px;
-    color: var(--roxo-neon);
-    text-align: center;
-}
+                <button class="btn-principal" onclick="enviarMusica()">⬆️ ENVIAR MÚSICA</button>
+                <p class="texto-vinculo">🔒 Seus dados estão seguros conosco</p>
+            </div>
+        </section>
 
-.imagem-central img {
-    width: 220px;
-    border-radius: 50%;
-    box-shadow: 0 0 40px var(--roxo-neon);
-    display: block;
-    margin: 0 auto 30px;
-}
+    </main>
 
-.btn-principal {
-    width: 100%;
-    background: linear-gradient(135deg, var(--roxo-neon), var(--azul-neon));
-    border: none;
-    border-radius: 50px;
-    padding: 18px;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 0 0 25px rgba(157,78,221,0.7);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-}
+    <!-- Navegação Inferior -->
+    <nav class="navegacao">
+        <div class="nav-item ativo" data-tela="radio">📻<br>Rádio</div>
+        <div class="nav-item" data-tela="playlist">🎵<br>Playlist</div>
+        <div class="nav-item" data-tela="podcast">🎙️<br>Podcast</div>
+        <div class="nav-item" data-tela="agenda">📅<br>Shows</div>
+        <div class="nav-item" data-tela="envio">📤<br>Enviar</div>
+    </nav>
 
-.btn-principal:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 35px rgba(0,180,216,0.8);
-}
+    <!-- Scripts -->
+    <script src="assets/js/navegacao.js"></script>
+    <script src="assets/js/vinculo-lark.js"></script>
+    <script src="assets/js/funcoes.js"></script>
 
-.lista-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    margin: 10px 0;
-    background: rgba(255,255,255,0.08);
-    border-radius: 12px;
-    transition: all 0.2s;
-}
-
-.lista-item:hover {
-    background: rgba(157,78,221,0.15);
-    transform: scale(1.02);
-}
-
-.btn-tocar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--roxo-neon), var(--azul-neon));
-    border: none;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    box-shadow: 0 0 15px rgba(157,78,221,0.5);
-}
-
-.navegacao {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(5,2,24,0.95);
-    display: flex;
-    justify-content: space-around;
-    padding: 15px 0;
-    border-top: 2px solid var(--roxo-neon);
-    backdrop-filter: blur(15px);
-}
-
-.nav-item {
-    text-align: center;
-    font-size: 13px;
-    color: #888888;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.nav-item.ativo {
-    color: var(--roxo-neon);
-    font-weight: bold;
-    text-shadow: 0 0 10px var(--roxo-neon);
-    transform: scale(1.1);
-}
-
-.texto-info {
-    text-align: center;
-    color: #cccccc;
-    margin: 15px 0;
-    font-size: 15px;
-}
-
-.texto-vinculo {
-    text-align: center;
-    color: #00b4d8;
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-.formulario-campo {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(157,78,221,0.4);
-    border-radius: 12px;
-    color: white;
-    font-size: 16px;
-}
-
-.area-upload {
-    border: 2px dashed var(--azul-neon);
-    border-radius: 15px;
-    padding: 40px 20px;
-    text-align: center;
-    margin: 20px 0;
-    color: #cccccc;
-}
-
-.chat-live {
-    margin-top: 25px;
-    padding: 20px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 15px;
-    border: 1px solid rgba(157,78,221,0.2);
-}
-
-.campo-chat {
-    width: 100%;
-    padding: 12px;
-    margin: 15px 0;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(157,78,221,0.4);
-    border-radius: 10px;
+</body>
+</html>
